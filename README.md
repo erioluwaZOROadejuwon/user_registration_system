@@ -34,9 +34,5 @@ print(result)
 - `any()` combined with a generator expression (`any(char in string.digits for char in password)`) as a compact way to check "does at least one character meet this condition?"
 - Dictionary keys are just strings I choose myself — Python doesn't enforce any particular casing, but if a test or another piece of code expects a specific key name, matching it exactly (including case) matters
 
-## Known issue (caught during review)
-This version's `validate_username()` required a minimum of 8 characters, and `validate_password()` required both a digit and a symbol. A test case (`validate_user('John', 'john@example.com', 'securePassword123')`) revealed these rules were stricter than what the exercise actually expected — the correct rules turned out to be a shorter minimum username length and no mandatory symbol in the password. This is a good example of validating assumptions against actual test cases rather than just what "feels right."
-
-## Tech
 Python 3, standard library only (`string`)
 
